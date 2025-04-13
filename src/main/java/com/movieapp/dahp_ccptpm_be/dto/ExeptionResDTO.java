@@ -16,5 +16,4 @@ import lombok.experimental.FieldDefaults;
 @ToString
 public class ExeptionResDTO {
     String error;
-    int status;
 }

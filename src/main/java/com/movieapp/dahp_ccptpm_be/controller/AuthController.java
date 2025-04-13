@@ -1,6 +1,7 @@
 package com.movieapp.dahp_ccptpm_be.controller;
 
 import com.movieapp.dahp_ccptpm_be.dto.AccountDTO;
+import com.movieapp.dahp_ccptpm_be.dto.CreateSuccessDTO;
 import com.movieapp.dahp_ccptpm_be.dto.LoginSuccessDTO;
 import com.movieapp.dahp_ccptpm_be.model.entity.Account;
 import com.movieapp.dahp_ccptpm_be.service.AuthService;
@@ -20,8 +21,8 @@ public class AuthController {
     AuthService authService;
 
     @PostMapping(value = "/auth/register")
-    public ResponseEntity<Account> register(@Valid @RequestBody AccountDTO accountDTO) {
-        ResponseEntity<Account> result = authService.register(accountDTO);
+    public ResponseEntity<CreateSuccessDTO> register(@Valid @RequestBody AccountDTO accountDTO) {
+        ResponseEntity<CreateSuccessDTO> result = authService.register(accountDTO);
         return result;
     }
 
