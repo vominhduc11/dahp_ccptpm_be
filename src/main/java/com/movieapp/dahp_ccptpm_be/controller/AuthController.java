@@ -1,6 +1,7 @@
 package com.movieapp.dahp_ccptpm_be.controller;
 
 import com.movieapp.dahp_ccptpm_be.dto.AccountDTO;
+import com.movieapp.dahp_ccptpm_be.dto.LoginSuccessDTO;
 import com.movieapp.dahp_ccptpm_be.model.entity.Account;
 import com.movieapp.dahp_ccptpm_be.service.AuthService;
 import jakarta.validation.Valid;
@@ -10,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -26,8 +26,8 @@ public class AuthController {
     }
 
     @PostMapping(value = "/auth/login")
-    public ResponseEntity<Account> login(@Valid @RequestBody AccountDTO accountDTO) {
-        ResponseEntity<Account> result = authService.login(accountDTO);
+    public ResponseEntity<LoginSuccessDTO> login(@Valid @RequestBody AccountDTO accountDTO) {
+        ResponseEntity<LoginSuccessDTO> result = authService.login(accountDTO);
         return result;
     }
 }
